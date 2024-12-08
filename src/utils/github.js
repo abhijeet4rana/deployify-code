@@ -1,7 +1,7 @@
 import { Octokit } from '@octokit/rest';
 
-// These should be your GitHub OAuth App credentials
-const GITHUB_CLIENT_ID = 'YOUR_GITHUB_CLIENT_ID'; // Replace with your GitHub OAuth App client ID
+// Replace these with your GitHub OAuth App credentials
+const GITHUB_CLIENT_ID = 'YOUR_GITHUB_CLIENT_ID';
 const GITHUB_REDIRECT_URI = 'http://localhost:5173/callback'; // Update this with your actual redirect URI
 
 export const initiateGitHubOAuth = () => {
@@ -12,8 +12,7 @@ export const initiateGitHubOAuth = () => {
 
 export const handleOAuthCallback = async (code) => {
   try {
-    // Note: This should be handled by your backend to keep the client_secret secure
-    // For demo purposes, we're showing how it would work
+    // Note: In a production environment, this should be handled by your backend
     const response = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: {
